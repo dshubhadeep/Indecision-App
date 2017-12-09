@@ -4,19 +4,14 @@ import Option from './components/Option';
 import Options from './components/Options';
 import Header from './components/Header';
 import Action from './components/Action';
-import './App.css';
+import OptionModal from './components/OptionModal';
+import './styles/App.css';
 
 class IndecisionApp extends Component {
-  constructor(props) {
-    super(props);
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-    this.handlePick = this.handlePick.bind(this);
-    this.handleAddOption = this.handleAddOption.bind(this);
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
-    this.state = {
-      options: []
-    };
-  }
+  state = {
+    options: [],
+    selectedOption: undefined
+  };
 
   componentDidMount() { // only for class based component
     try {
@@ -40,20 +35,20 @@ class IndecisionApp extends Component {
     }
   }
 
-  handleDeleteOptions() {
+  handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
   }
-  handleDeleteOption(optionToRemove) {
+  handleDeleteOption = (optionToRemove) => {
     this.setState((prevState) => ({
       options: prevState.options.filter((option) => optionToRemove !== option)
     }))
   }
-  handlePick() {
+  handlePick = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option);
+    this.setState(() => ({selectedOption:option}));
   }
-  handleAddOption(option) {
+  handleAddOption = (option) => {
     if (!option) {
       return 'Enter valid value to add item';
     } else if (this.state.options.indexOf(option) > -1) {
@@ -63,17 +58,23 @@ class IndecisionApp extends Component {
     this.setState((prevState) => ({ options: prevState.options.concat(option) }));
 
   }
+  handleClearOption = () => {
+    this.setState(() => ({selectedOption:undefined}));
+  }
   render() {
     const title = 'Indecision';
     const subtitle = 'Put your life in the hands of a computer';
 
     return (
       <div className='App'>
+        
         <Header subtitle={subtitle} />
+        <div className='container'>
         <Action
           hasOptions={this.state.options.length > 0}
           handlePick={this.handlePick}
         />
+        <div className='widget'>
         <Options
           options={this.state.options}
           handleDeleteOptions={this.handleDeleteOptions}
@@ -81,6 +82,12 @@ class IndecisionApp extends Component {
         />
         <AddOption
           handleAddOption={this.handleAddOption}
+        />
+        </div>
+        </div>
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleClearOption={this.handleClearOption}
         />
       </div>
     );
