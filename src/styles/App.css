@@ -7,15 +7,14 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #333745; 
+  background-color: #333745;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-
-button:disabled{
+button:disabled {
   cursor: default;
 }
 
@@ -39,7 +38,7 @@ button:disabled{
 }
 
 .header__subtitle {
-  color : #a5afd7; /*off-white*/
+  color: #a5afd7; /*off-white*/
   font-size: 1.6rem; /*m-size*/
   font-weight: 500;
   margin: 0;
@@ -47,32 +46,32 @@ button:disabled{
 
 .big-button {
   background-color: #8357c5; /*purple*/
-  border:none;
-  border-bottom: .6rem solid #6f4aaa;
-  color:white;
-  font-weight:bold;
-  font-size:3.2rem;
+  border: none;
+  border-bottom: 0.6rem solid #6f4aaa;
+  color: white;
+  font-weight: bold;
+  font-size: 3.2rem;
   width: 100%;
   padding: 2.4rem;
-  margin-bottom:4.8rem;
+  margin-bottom: 4.8rem;
 }
 
 .big-button:disabled {
-  opacity:0.5;
+  opacity: 0.5;
 }
 
 .button {
   background-color: #8357c5;
-  border:none;
-  border-bottom: .3rem solid #6f4aaa;
-  color:white;
+  border: none;
+  border-bottom: 0.3rem solid #6f4aaa;
+  color: white;
   font-weight: 500;
   padding: 1.2rem;
 }
 
 .button--link {
   background: none;
-  border:none;
+  border: none;
   color: #a5afd7;
   padding: 0;
 }
@@ -91,11 +90,11 @@ button:disabled{
 }
 
 .widget-header-title {
-  margin: 0; 
+  margin: 0;
 }
 
 .widget-msg {
-  color:#a5afd7;
+  color: #a5afd7;
   margin: 0;
   padding: 3.2rem;
   text-align: center;
@@ -104,7 +103,7 @@ button:disabled{
 
 .option {
   border-bottom: 1px solid #686f8b;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   padding: 2rem 1.6rem;
 }
@@ -118,7 +117,7 @@ button:disabled{
 }
 
 .add-option-error {
-  color : #a5afd7;
+  color: #a5afd7;
   font-style: italic;
   padding: 0 3.2rem;
   margin: 3.2rem;
@@ -133,11 +132,11 @@ button:disabled{
 .add-option__input {
   flex-grow: 1;
   background: #3c4251;
-  border:none;
-  border-bottom: .3rem solid #2b303a; 
-  color:#a5afd7;
+  border: none;
+  border-bottom: 0.3rem solid #2b303a;
+  color: #a5afd7;
   padding: 1rem;
-  margin-right:1rem;
+  margin-right: 1rem;
 }
 
 .ReactModalPortal > div {
